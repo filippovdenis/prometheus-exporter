@@ -1,0 +1,23 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Debug",
+      "System": "Warning",
+      "Microsoft": "Warning"
+    },
+    "Console": {
+      "IncludeScopes": true
+    }
+  },
+
+  "Kestrel": {
+    "Endpoints": {
+      "Http": {
+        "Url": "http://nsk-nb02:9081"
+      },
+      "HttpsDefaultCert": {
+        "Url": "https://localhost:5001"
+      }
+    }
+  }
+}

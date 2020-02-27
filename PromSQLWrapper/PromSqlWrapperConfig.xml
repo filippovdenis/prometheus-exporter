@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <columns>
+    <column name="NameColumn">MeasureName</column>
+    <column name="ValueColumn">MeasureValue</column>
+    <column name="MetricTypeColumn">MeasureType</column>
+  </columns> 
+
+  <export_sqls>
+
+    <export_sql name_prefix="some_metric" readonlyconnecton="true">
+      <sql>select 'replica_count' as MeasureName, CAST(CustomerId AS varchar(10)) as replica_id, 'secondary' as SecondId, CAST(CustomerId AS varchar(10)) as third_id, CAST(ROW_NUMBER() OVER(ORDER BY CustomerId) AS numeric(28,12)) as MeasureValue, 'gauge' AS MeasureType from SomeDB.dbo.Customer</sql>
+    </export_sql>    
+  </export_sqls>
+</configuration>
